@@ -20,3 +20,8 @@ code {
 .container {
   margin: 10px auto;
 }
+
+.container-item__title {
+  text-align: center;
+  margin: 10px auto;
+}

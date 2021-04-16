@@ -2,8 +2,7 @@ import React from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./components/header/Header";
-import { Col, Container, Row } from "react-bootstrap";
-import Item from "./components/item/Item";
+import WeatherList from "./components/weather-list/WeatherList";
 
 function App() {
   return (
@@ -12,14 +11,7 @@ function App() {
         <Header />
       </div>
       <div className="wrapper">
-        <div className="container-fluid">DashBoard</div>
-        <Container>
-          <Row>
-            <Col xs={12} md={4}>
-              <Item />
-            </Col>
-          </Row>
-        </Container>
+        <WeatherList />
       </div>
     </div>
   );
