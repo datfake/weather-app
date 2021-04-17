@@ -35,13 +35,15 @@ const Item: React.FC<ItemProps> = ({ city }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const viewDetails = () => {};
+
   return (
-    <div>
-      <Card style={{ width: "18rem", height: "240px" }}>
+    <div className="container">
+      <Card style={{ width: "18rem", height: "240px", cursor: "pointer" }}>
         <Card.Title className="container-item__title">
           {inforWeather?.city}
         </Card.Title>
-        <Card.Body>
+        <Card.Body onClick={viewDetails}>
           <Row>
             <Col>
               <Card.Img variant="top" src={image} />

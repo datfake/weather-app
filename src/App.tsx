@@ -1,19 +1,16 @@
 import React from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Header from "./components/header/Header";
-import WeatherList from "./components/weather-list/WeatherList";
+import { Router } from "react-router-dom";
+import Layout from "./views/Layout";
+import { createBrowserHistory } from "history";
 
 function App() {
+  const history = createBrowserHistory();
   return (
-    <div>
-      <div className="header">
-        <Header />
-      </div>
-      <div className="wrapper">
-        <WeatherList />
-      </div>
-    </div>
+    <Router history={history}>
+      <Layout />
+    </Router>
   );
 }
 

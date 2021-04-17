@@ -43,41 +43,43 @@ const WeatherList: React.FC<WeatherListProps> = () => {
             </Col>
           ))}
           <Col xs={12} md={4}>
-            <Card
-              style={{ width: "18rem", height: "240px", cursor: "pointer" }}
-            >
-              <Card.Body className="item-center">
-                <h4 className="item-center__add-city" onClick={handleShow}>
-                  + Add city
-                </h4>
-                <Modal
-                  show={show}
-                  onHide={handleClose}
-                  backdrop="static"
-                  keyboard={false}
-                  centered
-                >
-                  <Modal.Header closeButton>
-                    <Modal.Title>Choose a city</Modal.Title>
-                  </Modal.Header>
-                  <Modal.Body>
-                    <Form.Control
-                      onChange={(e) => setNewCity({ name: e.target.value })}
-                      type="text"
-                      placeholder="City name"
-                    />
-                  </Modal.Body>
-                  <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose}>
-                      Cancel
-                    </Button>
-                    <Button variant="primary" onClick={addCity}>
-                      Ok
-                    </Button>
-                  </Modal.Footer>
-                </Modal>
-              </Card.Body>
-            </Card>
+            <div className="container">
+              <Card
+                style={{ width: "18rem", height: "240px", cursor: "pointer" }}
+              >
+                <Card.Body className="item-center">
+                  <h4 className="item-center__add-city" onClick={handleShow}>
+                    + Add city
+                  </h4>
+                  <Modal
+                    show={show}
+                    onHide={handleClose}
+                    backdrop="static"
+                    keyboard={false}
+                    centered
+                  >
+                    <Modal.Header closeButton>
+                      <Modal.Title>Choose a city</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                      <Form.Control
+                        onChange={(e) => setNewCity({ name: e.target.value })}
+                        type="text"
+                        placeholder="City name"
+                      />
+                    </Modal.Body>
+                    <Modal.Footer>
+                      <Button variant="secondary" onClick={handleClose}>
+                        Cancel
+                      </Button>
+                      <Button variant="primary" onClick={addCity}>
+                        Ok
+                      </Button>
+                    </Modal.Footer>
+                  </Modal>
+                </Card.Body>
+              </Card>
+            </div>
           </Col>
         </Row>
       </Container>
