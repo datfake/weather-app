@@ -36,3 +36,7 @@ code {
   height: 500px;
   background-color: white;
 }
+
+.infor-weather__detail {
+  margin-top: 40px;
+}

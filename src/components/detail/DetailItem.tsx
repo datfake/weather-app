@@ -95,7 +95,12 @@ const DetailCity: React.FC<DetailCityProps> = ({ name }) => {
                     {inforWeather?.temp} F
                   </h4>
                 </Col>
-                <Col></Col>
+                <Col>
+                  <div className="infor-weather__detail">
+                    <h5>humidity: {inforWeather?.humidity}%</h5>
+                    <h5>wind: {inforWeather?.wind}km/h</h5>
+                  </div>
+                </Col>
                 <Col></Col>
               </Row>
               <Row>
