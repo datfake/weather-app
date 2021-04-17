@@ -36,8 +36,8 @@ const Item: React.FC<ItemProps> = ({ city }) => {
   }, []);
 
   return (
-    <div className="container">
-      <Card style={{ width: "18rem" }}>
+    <div>
+      <Card style={{ width: "18rem", height: "240px" }}>
         <Card.Title className="container-item__title">
           {inforWeather?.city}
         </Card.Title>
