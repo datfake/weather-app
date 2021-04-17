@@ -57,7 +57,11 @@ const WeatherList: React.FC<WeatherListProps> = () => {
           <Col xs={12} md={4}>
             <div className="container">
               <Card
-                style={{ width: "18rem", height: "240px", cursor: "pointer" }}
+                style={{
+                  width: "20rem",
+                  minHeight: "250px",
+                  cursor: "pointer",
+                }}
               >
                 <Card.Body className="item-center">
                   <h4 className="item-center__add-city" onClick={handleShow}>
