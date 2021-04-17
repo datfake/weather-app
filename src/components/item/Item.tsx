@@ -18,7 +18,10 @@ const Item: React.FC<ItemProps> = ({ city }) => {
     if (data.cod === 200) {
       setInforWeather({
         city: data.name,
-        day: new Date().toISOString().slice(0, 10),
+        day: new Date(parseInt(data.dt, 10) * 1000)
+          .toLocaleString()
+          .slice(0, 19)
+          .replace("T", " "),
         minTemp: data.main.temp_min,
         maxTemp: data.main.temp_max,
         main: data.weather[0].main,
