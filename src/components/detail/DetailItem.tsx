@@ -92,7 +92,7 @@ const DetailCity: React.FC<DetailCityProps> = ({ name }) => {
                     ></img>{" "}
                   </span>
                   <h4 style={{ display: "inline-block" }}>
-                    {inforWeather?.temp} C
+                    {inforWeather?.temp} F
                   </h4>
                 </Col>
                 <Col></Col>
@@ -105,7 +105,7 @@ const DetailCity: React.FC<DetailCityProps> = ({ name }) => {
                     <span>
                       <img src={weatherSummary.image} alt="icon weather"></img>{" "}
                     </span>
-                    <p>{weatherSummary?.temp} C</p>
+                    <p>{weatherSummary?.temp} F</p>
                   </Col>
                 ))}
               </Row>
