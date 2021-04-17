@@ -1,6 +1,7 @@
 import * as React from "react";
 import { useEffect, useState } from "react";
 import { Card, Col, Row } from "react-bootstrap";
+import { useHistory } from "react-router";
 const API_KEY = "0cc93f693bc9c6566aebe57fe293ecd4";
 
 interface ItemProps {
@@ -10,6 +11,7 @@ interface ItemProps {
 const Item: React.FC<ItemProps> = ({ city }) => {
   const [inforWeather, setInforWeather] = useState<InforWeather>();
   const [image, setImage] = useState<string>();
+  let history = useHistory();
   const getWeatherInfo = async () => {
     const api_call = await fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=${city.name}&appid=${API_KEY}&units=metric`
@@ -38,7 +40,9 @@ const Item: React.FC<ItemProps> = ({ city }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const viewDetails = () => {};
+  const viewDetails = () => {
+    history.push("detail/" + city.name);
+  };
 
   return (
     <div className="container">
