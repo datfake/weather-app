@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Button,
   Card,
@@ -25,9 +25,21 @@ const WeatherList: React.FC<WeatherListProps> = () => {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const getData = () => {
+    const data = localStorage.getItem("cities");
+    if (data != null) {
+      setCities(JSON.parse(data));
+    }
+  };
+  useEffect(() => {
+    getData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   const addCity = () => {
     if (newCity) {
       cities.push(newCity);
+      localStorage.setItem("cities", JSON.stringify(cities));
       setCities(cities);
       setShow(false);
     }
