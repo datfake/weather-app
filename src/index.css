@@ -33,10 +33,15 @@ code {
 .content {
   margin: 0 auto;
   width: 90%;
-  height: 500px;
+  min-height: 500px;
   background-color: white;
 }
 
 .infor-weather__detail {
   margin-top: 40px;
+}
+
+.detail-item {
+  background-color: beige;
+  border: 1px solid;
 }

@@ -16,6 +16,9 @@ const initialCities: Array<City> = [
   {
     name: "hanoi",
   },
+  {
+    name: "vinh",
+  }
 ];
 
 const WeatherList: React.FC<WeatherListProps> = () => {

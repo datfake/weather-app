@@ -49,17 +49,17 @@ const DetailCity: React.FC<DetailCityProps> = ({ name }) => {
           "http://openweathermap.org/img/wn/" + data.weather[0].icon + ".png"
         );
         let inforWeathers = new Array<WeatherSummary>();
-        for (let i = 0; i < 9; i++) {
+        for (let i = 0; i < 18; i++) {
           inforWeathers.push({
-            time: new Date(parseInt(dataDetail.hourly[i * 3].dt, 10) * 1000)
+            time: new Date(parseInt(dataDetail.hourly[i * 2].dt, 10) * 1000)
               .toLocaleString()
               .slice(0, 19)
               .replace("T", " "),
             image:
               "http://openweathermap.org/img/wn/" +
-              dataDetail.hourly[i * 3].weather[0].icon +
+              dataDetail.hourly[i * 2].weather[0].icon +
               ".png",
-            temp: dataDetail.hourly[i * 3].temp,
+            temp: dataDetail.hourly[i * 2].temp,
           });
         }
         setWeatherSummarys(inforWeathers);
@@ -105,7 +105,7 @@ const DetailCity: React.FC<DetailCityProps> = ({ name }) => {
               </Row>
               <Row>
                 {weatherSummarys.map((weatherSummary) => (
-                  <Col>
+                  <Col className="detail-item">
                     <p>{weatherSummary?.time}</p>
                     <span>
                       <img src={weatherSummary.image} alt="icon weather"></img>{" "}

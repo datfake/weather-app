@@ -62,7 +62,6 @@ const Item: React.FC<ItemProps> = ({ city }) => {
                 {inforWeather?.maxTemp} C
               </Card.Text>
               <Card.Text>{inforWeather?.main}</Card.Text>
-              <Card.Text>{inforWeather?.percentRain} % Rain</Card.Text>
             </Col>
           </Row>
         </Card.Body>
