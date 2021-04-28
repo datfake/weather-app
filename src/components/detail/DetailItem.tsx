@@ -48,7 +48,7 @@ const DetailCity: React.FC<DetailCityProps> = ({ name }) => {
         setImage(
           "http://openweathermap.org/img/wn/" + data.weather[0].icon + ".png"
         );
-        let inforWeathers = new Array<WeatherSummary>();
+        let inforWeathers = new Array();
         for (let i = 0; i < 9; i++) {
           inforWeathers.push({
             time: new Date(parseInt(dataDetail.hourly[i * 3].dt, 10) * 1000)
@@ -95,12 +95,7 @@ const DetailCity: React.FC<DetailCityProps> = ({ name }) => {
                     {inforWeather?.temp} F
                   </h4>
                 </Col>
-                <Col>
-                  <div className="infor-weather__detail">
-                    <h5>humidity: {inforWeather?.humidity}%</h5>
-                    <h5>wind: {inforWeather?.wind}km/h</h5>
-                  </div>
-                </Col>
+                <Col></Col>
                 <Col></Col>
               </Row>
               <Row>
